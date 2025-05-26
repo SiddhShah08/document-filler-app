@@ -1,0 +1,179 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Basic reset and global styles */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 24px; /* A bit of padding around the form */
+    background-color: #cfebef;
+}
+
+/* Typography */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; /* Equivalent to text-4xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    text-align: center;
+    color: #fdfefda4; /* A dark gray for text */
+    margin-bottom: 2rem; /* Equivalent to mb-8 */
+    letter-spacing: 0.025em; /* Equivalent to tracking-wide */
+}
+
+h2 {
+    font-family: 'Playfair Display', serif; /* Or Inter, depending on preference */
+    font-size: 1.5rem; /* Equivalent to text-xl */
+    font-weight: 600; /* Equivalent to font-semibold */
+    color: #2d3748; /* A slightly lighter dark gray */
+    margin-bottom: 1rem; /* Equivalent to mb-4 */
+    padding-bottom: 0.5rem; /* Equivalent to pb-2 */
+    border-bottom: 1px solid #e2e8f0; /* Equivalent to border-b border-gray-300 */
+}
+
+/* Form Container */
+.form-wrapper {
+    width: 100%;
+    max-width: 960px; /* Equivalent to max-w-4xl (approx 768px in Tailwind, but custom here) */
+    background-color: rgba(255, 255, 255, 0.9); /* White with opacity */
+    padding: 40px; /* Equivalent to p-10 */
+    border-radius: 12px; /* Equivalent to rounded-xl */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Equivalent to shadow-2xl */
+    border: 1px solid #cbd5e0; /* Equivalent to border border-gray-200 */
+}
+
+/* Spacing Utilities (Mimicking Tailwind's space-y) */
+.space-y-8 > *:not(:first-child) {
+    margin-top: 2rem; /* Equivalent to space-y-8 */
+}
+
+.space-y-6 > *:not(:first-child) {
+    margin-top: 1.5rem; /* Equivalent to space-y-6 */
+}
+
+/* Section Cards */
+.section-card {
+    padding: 24px; /* Equivalent to p-6 */
+    border: 1px solid #e2e8f0; /* Equivalent to border border-gray-200 */
+    border-radius: 8px; /* Equivalent to rounded-lg */
+    background-color: #f7fafc; /* Equivalent to bg-gray-50 */
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); /* Equivalent to shadow-inner */
+}
+
+/* Input Grid Layouts (Mimicking Tailwind's grid cols) */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Default for mobile */
+    gap: 24px; /* Equivalent to gap-6 */
+}
+
+@media (min-width: 768px) { /* Medium screens */
+    .grid-container.md-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) { /* Large screens */
+    .grid-container.lg-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Form Labels and Inputs */
+.form-label {
+    display: block;
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    font-weight: 500; /* Equivalent to font-medium */
+    color: #4a5568; /* Equivalent to text-gray-700 */
+    margin-bottom: 4px; /* Equivalent to mb-1 */
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 10px 16px; /* Equivalent to px-4 py-2 */
+    border: 1px solid #cbd5e0; /* Equivalent to border border-gray-300 */
+    border-radius: 6px; /* Equivalent to rounded-md */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Equivalent to shadow-sm */
+    transition: all 150ms ease-in-out; /* Equivalent to transition duration-150 ease-in-out */
+    font-size: 1rem; /* Equivalent to sm:text-base */
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3182ce; /* A light blue */
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Equivalent to focus:ring-blue-500 */
+}
+
+/* Button */
+.submit-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 12px 24px; /* Equivalent to py-3 px-6 */
+    border: none; /* No border */
+    border-radius: 8px; /* Equivalent to rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md */
+    font-size: 1.125rem; /* Equivalent to text-lg */
+    font-weight: 600; /* Equivalent to font-semibold */
+    color: white; /* Equivalent to text-white */
+    background: linear-gradient(to right, #2b6cb0, #2c5282); /* Equivalent to bg-gradient-to-r from-blue-600 to-blue-700 */
+    cursor: pointer;
+    transition: all 300ms ease-in-out; /* Equivalent to transition duration-300 ease-in-out */
+    transform: scale(1); /* For hover effect */
+}
+
+.submit-button:hover {
+    background: linear-gradient(to right, #2c5282, #2a4365); /* Equivalent to hover:from-blue-700 hover:to-blue-800 */
+    transform: scale(1.02); /* Slight scale on hover */
+}
+
+.submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.5), 0 0 0 2px white; /* Equivalent to focus:ring-3 focus:ring-offset-2 focus:ring-blue-500 */
+}
+
+.submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: #a0aec0; /* A gray color when disabled */
+}
+
+/* Error Message */
+.error-alert {
+    background-color: #fee2e2; /* Equivalent to bg-red-100 */
+    border: 1px solid #fca5a5; /* Equivalent to border border-red-400 */
+    color: #b91c1c; /* Equivalent to text-red-700 */
+    padding: 16px 24px; /* Equivalent to px-6 py-4 */
+    border-radius: 8px; /* Equivalent to rounded-lg */
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md */
+}
+
+.error-alert strong {
+    font-weight: 700; /* Equivalent to font-bold */
+}
+
+.error-alert span {
+    display: inline; /* Keep text inline with strong */
+    margin-left: 8px; /* Equivalent to ml-2 */
+}
+
+/* General margins */
+.mt-4 {
+    margin-top: 16px;
+}
+
+/* Added background color for form-title */
+.form-title {
+    background-color: rgb(187, 32, 50);
+}
